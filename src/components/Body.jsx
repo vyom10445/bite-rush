@@ -7,6 +7,14 @@ function Body() {
       <div className="search">Search</div>
       <div className="resContainer">
         <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     </div>
   );
