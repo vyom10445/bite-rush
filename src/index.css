@@ -66,3 +66,18 @@
     font-size: 1em; /* Slightly smaller on mobile for better fit */
   }
 }
+
+.res-card {
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-img {
+  width: 198px;
+}
