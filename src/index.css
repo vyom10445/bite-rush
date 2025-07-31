@@ -2,7 +2,7 @@
 :root {
   --primary-color: #ffa500; /* Orange from logo */
   --text-color: #333;
-  --header-bg: #f8f8f8;
+  --header-bg: #ffffff; /* Changed header background to pure white to blend with logo */
   --list-item-color: #555;
   --list-item-hover-color: var(--primary-color);
 }
