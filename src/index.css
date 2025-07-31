@@ -119,7 +119,7 @@
   color: green;
 }
 
-.res-container {
+.resContainer {
   display: flex;
   flex-wrap: wrap;
 }
