@@ -1,17 +1,68 @@
+/* Color palette (example) */
+:root {
+  --primary-color: #ffa500; /* Orange from logo */
+  --text-color: #333;
+  --header-bg: #f8f8f8;
+  --list-item-color: #555;
+  --list-item-hover-color: var(--primary-color);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Vertically align items */
+  background-color: var(--header-bg);
+  padding: 5px 10px; /* Reduced padding for a smaller header */
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .headerLogo {
-  width: 100px;
-  height: 100px;
+  width: 70px; /* Reduced logo size */
+  height: 70px; /* Reduced logo size */
 }
 
 .unorderedList {
   display: flex;
+  list-style: none; /* Remove bullet points */
+  padding: 0 20px 0 0; /* Add padding to the right to bring items slightly left */
+  margin: 0; /* Remove default margin */
+  gap: 30px; /* Explicit gap for spacing between list items */
+  justify-content: flex-end; /* Keep items aligned to the right, but with right padding */
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; /* Minimalist font stack */
+  font-weight: normal; /* Removed bold font weight */
 }
 
 .listItem {
-  margin-left: 10px;
+  cursor: pointer; /* Indicate interactivity */
+  color: var(--list-item-color);
+  transition: color 0.3s ease-in-out;
+  font-size: 1.2em; /* Increased font size for list items */
+}
+
+.listItem:hover {
+  color: var(--list-item-hover-color);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .unorderedList {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    padding: 0; /* Reset padding for vertical stacking */
+    gap: 10px; /* Adjust gap for vertical stacking */
+  }
+
+  .listItem {
+    margin: 0; /* Reset margin as gap is used */
+    font-size: 1em; /* Slightly smaller on mobile for better fit */
+  }
 }
