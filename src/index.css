@@ -5,6 +5,8 @@
   --header-bg: #ffffff; /* Changed header background to pure white to blend with logo */
   --list-item-color: #555;
   --list-item-hover-color: var(--primary-color);
+  --card-bg: #ffffff; /* Added a specific background for cards */
+  --card-shadow: rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for cards */
 }
 
 .header {
@@ -68,16 +70,50 @@
 }
 
 .res-card {
-  width: 200px;
-  height: 300px;
-  border: 1px solid black;
-  padding: 5px;
+  width: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 10px var(--card-shadow);
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
-.search {
-  padding: 10px;
+.res-card:hover {
+  transform: scale(1.03);
 }
 
 .res-img {
-  width: 198px;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.res-details {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-color);
+}
+
+.res-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.res-details h5 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--list-item-color);
+}
+
+.search {
+  padding: 20px;
+}
+
+.rating {
+  color: green;
 }
