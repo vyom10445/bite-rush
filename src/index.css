@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLogo {
+  width: 100px;
+  height: 100px;
+}
+
+.unorderedList {
+  display: flex;
+}
+
+.listItem {
+  margin-left: 10px;
+}
