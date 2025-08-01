@@ -1558,7 +1558,7 @@ function Body() {
       <div className="search">Search</div>
       <div className="resContainer">
         {resList.map((restaurant) => (
-          <Card resData={restaurant} />
+          <Card key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
