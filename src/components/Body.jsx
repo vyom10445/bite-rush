@@ -16,6 +16,7 @@ function Body() {
     );
     const json = await data.json();
     console.log(json);
+    setRestaurantList(json.data.cards);
   };
 
   return (
