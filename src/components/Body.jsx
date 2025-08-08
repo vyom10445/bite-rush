@@ -1,24 +1,23 @@
 import React from "react";
 import Card from "./Card";
 import resList from "../utils/mockData";
-import { onState } from "react";
-
-const [restaurantList, setRestaurantList] = onState(resList);
+import { useState } from "react";
 
 function Body() {
+  const [restaurantList, setRestaurantList] = useState(resList);
   return (
     <div className="body">
       <div
         className="filter-btn"
         onClick={() => {
-          const filteredList = resList.map((res) => res.info.avgRating > 4);
+          const filteredList = resList.filter((res) => res.info.avgRating > 4);
           setRestaurantList(filteredList);
         }}
       >
         Filter Top Restaurants
       </div>
       <div className="resContainer">
-        {resList.map((restaurant) => (
+        {restaurantList.map((restaurant) => (
           <Card key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
