@@ -1,6 +1,9 @@
 import React from "react";
+import { useState } from "react";
 
 function Header() {
+  const [accBtn, setAccBtn] = useState("Login");
+
   return (
     <div className="header">
       <div className="header-logo-container">
@@ -12,6 +15,14 @@ function Header() {
           <li className="listItem">About</li>
           <li className="listItem">Contact Us</li>
           <li className="listItem">Cart</li>
+          <li
+            className="listItem"
+            onClick={() => {
+              accBtn === "Login" ? setAccBtn("Logout") : setAccBtn("Login");
+            }}
+          >
+            {accBtn}
+          </li>
         </ul>
       </nav>
     </div>
