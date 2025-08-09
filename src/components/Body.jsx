@@ -4,7 +4,7 @@ import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 
 function Body() {
-  const [restaurantList, setRestaurantList] = useState(resList);
+  const [restaurantList, setRestaurantList] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -16,11 +16,19 @@ function Body() {
     );
     const json = await data.json();
     console.log(json);
-    setRestaurantList(
-      json.data.cards.find(
-        (card) => card.card.card.gridElements?.infoWithStyle?.restaurants
-      )?.card.card.gridElements.infoWithStyle.restaurants || []
+
+    // Find all cards with restaurants and combine them
+    const allRestaurantCards =
+      json.data?.cards?.filter(
+        (card) => card.card?.card?.gridElements?.infoWithStyle?.restaurants
+      ) || [];
+
+    // map(extact restaurants from each card) Flatten all restaurants from all cards(flatten into single array ranther than multiple arrays inside array) .
+    const restaurants = allRestaurantCards.flatMap(
+      (card) => card.card.card.gridElements.infoWithStyle.restaurants
     );
+
+    setRestaurantList(restaurants);
   };
 
   return (

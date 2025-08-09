@@ -124,21 +124,26 @@
   flex-wrap: wrap;
 }
 
-.filter-btn {
+.filter-btn,
+.refresh-btn,
+.load-more-btn {
   display: inline-block;
   padding: 10px 18px;
-  margin: 16px 0;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Segoe UI", Roboto, sans-serif; /* clean system font */
+  font-family: "Segoe UI", Roboto, sans-serif;
   color: white;
-  background-color: #ff4d4d;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   user-select: none;
+}
+
+.filter-btn {
+  background-color: #ff4d4d;
+  margin: 10px;
 }
 
 .filter-btn:hover {
@@ -149,11 +154,4 @@
 .filter-btn:active {
   background-color: #cc0000;
   transform: translateY(0);
-}
-
-@media (max-width: 600px) {
-  .filter-btn {
-    width: 100%;
-    text-align: center;
-  }
 }
