@@ -43,20 +43,22 @@ function Body() {
 
   return (
     <div className="body">
-      <div className="search">
-        <input type="text" className="searchBox" />
-        <button className="searchBtn">Search</button>
-      </div>
-      <div
-        className="filter-btn"
-        onClick={() => {
-          const filteredList = restaurantList.filter(
-            (res) => res.info.avgRating > 4
-          );
-          setRestaurantList(filteredList);
-        }}
-      >
-        Filter Top Restaurants
+      <div className="search-and-filter-container">
+        <div className="search">
+          <input type="text" className="searchBox" />
+          <button className="searchBtn">Search</button>
+        </div>
+        <div
+          className="filter-btn"
+          onClick={() => {
+            const filteredList = restaurantList.filter(
+              (res) => res.info.avgRating > 4
+            );
+            setRestaurantList(filteredList);
+          }}
+        >
+          Filter Top Restaurants
+        </div>
       </div>
       <div className="resContainer">
         {restaurantList.map((restaurant) => (
