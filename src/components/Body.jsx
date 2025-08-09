@@ -43,6 +43,10 @@ function Body() {
 
   return (
     <div className="body">
+      <div className="search">
+        <input type="text" className="searchBox" />
+        <button className="searchBtn">Search</button>
+      </div>
       <div
         className="filter-btn"
         onClick={() => {
