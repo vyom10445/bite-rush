@@ -58,7 +58,7 @@ function Body() {
             className="searchBtn"
             onClick={() => {
               const filteredList = restaurantList.filter((res) =>
-                res.info.name.includes(searchText)
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setRestaurantList(filteredList);
             }}
