@@ -5,14 +5,19 @@ import Body from "./components/Body";
 import About from "./components/About";
 import { createBrowserRouter } from "react-router-dom";
 
-const AppRouter = createBrowserRouter([
+export const AppRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
   },
   {
     path: "/about",
-    element: <About />,
+    element: (
+      <>
+        <Header />
+        <About />
+      </>
+    ),
   },
 ]);
 
