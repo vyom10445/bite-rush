@@ -277,3 +277,300 @@
   color: var(--list-item-color);
   margin-bottom: 15px;
 }
+
+/* Color palette (example) */
+:root {
+  --primary-color: #ffa500; /* Orange from logo */
+  --text-color: #333;
+  --header-bg: #ffffff; /* Changed header background to pure white to blend with logo */
+  --list-item-color: #555;
+  --list-item-hover-color: var(--primary-color);
+  --card-bg: #ffffff; /* Added a specific background for cards */
+  --card-shadow: rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for cards */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically align items */
+  background-color: var(--header-bg);
+  padding: 5px 10px; /* Reduced padding for a smaller header */
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.headerLogo {
+  width: 70px; /* Reduced logo size */
+  height: 70px; /* Reduced logo size */
+}
+
+.unorderedList {
+  display: flex;
+  list-style: none; /* Remove bullet points */
+  padding: 0 20px 0 0; /* Add padding to the right to bring items slightly left */
+  margin: 0; /* Remove default margin */
+  gap: 30px; /* Explicit gap for spacing between list items */
+  justify-content: flex-end; /* Keep items aligned to the right, but with right padding */
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; /* Minimalist font stack */
+  font-weight: normal; /* Removed bold font weight */
+}
+
+.listItem {
+  cursor: pointer; /* Indicate interactivity */
+  color: var(--list-item-color);
+  transition: color 0.3s ease-in-out;
+  font-size: 1.2em; /* Increased font size for list items */
+}
+
+.listItem:hover {
+  color: var(--list-item-hover-color);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .unorderedList {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    padding: 0; /* Reset padding for vertical stacking */
+    gap: 10px; /* Adjust gap for vertical stacking */
+  }
+
+  .listItem {
+    margin: 0; /* Reset margin as gap is used */
+    font-size: 1em; /* Slightly smaller on mobile for better fit */
+  }
+}
+
+.res-card {
+  width: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 10px var(--card-shadow);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.res-card:hover {
+  transform: scale(1.03);
+}
+
+.res-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.res-details {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-color);
+  /* Added a simple, clean font-family to all text within the card */
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.res-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.res-details h5 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--list-item-color);
+}
+
+.search {
+  padding: 20px;
+}
+
+.rating {
+  color: green;
+}
+
+.resContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-btn,
+.refresh-btn,
+.load-more-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  user-select: none;
+}
+
+.filter-btn {
+  background-color: #ff4d4d;
+  margin: 10px;
+}
+
+.filter-btn:hover {
+  background-color: #e60000;
+  transform: translateY(-1px);
+}
+
+.filter-btn:active {
+  background-color: #cc0000;
+  transform: translateY(0);
+}
+
+/* Shimmer effect styling */
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.shimmer-card {
+  width: 220px;
+  height: 250px;
+  background: #f0f0f0;
+  border-radius: 16px;
+  animation: shimmer 1.5s infinite linear;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes shimmer {
+  0% {
+    background-color: #f0f0f0;
+  }
+  50% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #f0f0f0;
+  }
+}
+
+.search-and-filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.searchBox {
+  /* Increased border width and a darker color */
+  border: 0.5px solid #333;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+  width: 300px;
+  /* Set to white background for contrast */
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.searchBox:focus {
+  outline: none;
+  /* A subtle but visible focus effect */
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.8);
+}
+
+.searchBtn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.searchBtn:hover {
+  background-color: #e69500;
+  transform: translateY(-1px);
+}
+
+.searchBtn:active {
+  background-color: #cc8400;
+  transform: translateY(0);
+}
+
+.about-container,
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f7f7f7;
+  color: var(--text-color);
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  min-height: calc(100vh - 100px);
+}
+
+.about-content,
+.contact-content {
+  max-width: 800px;
+  text-align: center;
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.about-title,
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.about-description,
+.contact-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--list-item-color);
+  margin-bottom: 15px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.contact-item strong {
+  color: var(--primary-color);
+}

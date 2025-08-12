@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
 import { createBrowserRouter } from "react-router-dom";
+import Contact from "./components/Contact";
 
 export const AppRouter = createBrowserRouter([
   {
@@ -16,6 +17,15 @@ export const AppRouter = createBrowserRouter([
       <>
         <Header />
         <About />
+      </>
+    ),
+  },
+  {
+    path: "/contact",
+    element: (
+      <>
+        <Header />
+        <Contact />
       </>
     ),
   },
