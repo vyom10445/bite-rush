@@ -70,14 +70,14 @@
 }
 
 .res-card {
-  width: 220px;
+  /* Adjusted for flexible sizing */
+  flex: 1 1 220px;
   border-radius: 16px;
   overflow: hidden;
   background-color: var(--card-bg);
   box-shadow: 0 4px 10px var(--card-shadow);
   transition: transform 0.2s ease;
   cursor: pointer;
-  margin: 5px;
 }
 
 .res-card:hover {
@@ -125,7 +125,8 @@
 .resContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* This centers the cards */
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .filter-btn,
