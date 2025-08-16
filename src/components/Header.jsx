@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [accBtn, setAccBtn] = useState("Login");
@@ -11,9 +12,31 @@ function Header() {
       </div>
       <nav className="list">
         <ul className="unorderedList">
-          <li className="listItem">Home</li>
-          <li className="listItem">About</li>
-          <li className="listItem">Contact Us</li>
+          <li className="listItem">
+            <Link
+              to="/"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              Home
+            </Link>
+          </li>
+          <li className="listItem">
+            <Link
+              to="/about"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              About
+            </Link>
+          </li>
+          <li className="listItem">
+            <Link
+              to="/contact"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              Contact Us
+            </Link>
+          </li>
+
           <li className="listItem">Cart</li>
           <li
             className="listItem"
